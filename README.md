@@ -1,4 +1,4 @@
-# Isotropic Remesher
+# MATLAB Isotropic Remesher
 
 This is an Isoptropic Remesher based on OpenMesh (http://www.openmesh.org/) and OpenFlipper (http://www.openflipper.org/). It requires OpenMesh as a dependency.
 
