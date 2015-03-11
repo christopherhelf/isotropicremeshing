@@ -52,3 +52,10 @@ features is a nx1 matrix with the IDs of points considered as features vertices.
 targetedgelength is your desired target edge length and should be a double value, while iterations specifies the number of iterations and should be of type int32. 
 
 In return, you'll receive similar structures as the input, with facetsOut being a nx3 matrix with the triangles specified by points IDs, and pointsOut a nx3 double matrix with the x,y and z values of the new points. 
+
+## Example
+
+    $ points=randi([1 50],3,3);
+    $ facets=int32([1 2 3]);
+    $ [facetsRemeshed, pointsRemeshed] = remeshing(facets, points, int32([]), 25, int32(10));
+
