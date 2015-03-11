@@ -15,23 +15,23 @@ Make sure to compile OpenMesh with the CMAKE Flag -DCMAKE_BUILD_TYPE=Release, ot
 
 With the project folder as Matlab source, you can compile the file directly in Matlab via
 
-$ mex -I./ -I/usr/local/include -L/usr/local/lib/OpenMesh -lOpenMeshTools -lOpenMeshCore remeshing.c ./src/BSP.cpp ./src/BSPTraits.cpp ./src/IsotropicRemesher.cpp
+    $ mex -I./ -I/usr/local/include -L/usr/local/lib/OpenMesh -lOpenMeshTools -lOpenMeshCore remeshing.c ./src/BSP.cpp ./src/BSPTraits.cpp ./src/IsotropicRemesher.cpp
 
 Make sure to point to the correct location of OpenMesh headers and libraries. On MacOSX, you can install OpenMesh via
 
-$ brew install open-mesh --HEAD
+    $ brew install open-mesh --HEAD
 
 which will install the latest version of OpenMesh. If Homebrew doesn't install the Release version, then you can quickly add the
 
-$ -DCMAKE_BUILD_TYPE=Release
+    $ -DCMAKE_BUILD_TYPE=Release
 
 flag to the homebrew formula 
 
-$ /usr/local/Library/Formula/open-mesh.rb
+    $ /usr/local/Library/Formula/open-mesh.rb
 
 in the line 
 
-$ system "cmake", "..", *std_cmake_args, "-DCMAKE_BUILD_TYPE=Release"
+    $ system "cmake", "..", *std_cmake_args, "-DCMAKE_BUILD_TYPE=Release"
 
 This is a quick-and-dirty fix, so it's much better if you compile OpenMesh yourself and set the flags manually. 
 
@@ -39,7 +39,7 @@ This is a quick-and-dirty fix, so it's much better if you compile OpenMesh yours
 
 In Matlab you can call the function via
 
-$ [facetsOut, pointsOut] = remeshing(facets, points, features, targetedgelength, iterations);
+    $ [facetsOut, pointsOut] = remeshing(facets, points, features, targetedgelength, iterations);
 
 facets is supposed to be a nx3 matrix of type int32 (you can simply convert a double matrix via int32(yourmatrix)) containing the IDs of the your points within the points matrix. IDs should, in Matlab notation, start with 1 and end with the size of the points matrix. 
 
