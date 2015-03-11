@@ -2,7 +2,11 @@
 
 This is an Isoptropic Remesher based on OpenMesh (http://www.openmesh.org/) and OpenFlipper (http://www.openflipper.org/). It requires OpenMesh as a dependency.
 
-Make sure to compile OpenMesh with the CMAKE Flag -DCMAKE_BUILD_TYPE=Release, otherwise dynamic casting is used which is not well supported by Matlab and hence can lead to segmentation faults. 
+Make sure to compile OpenMesh with the CMAKE Flag -DCMAKE_BUILD_TYPE=Release, otherwise dynamic casting is used which is not well supported by Matlab and hence can lead to segmentation faults. Otherwise set the flag
+
+    $ #define OM_FORCE_STATIC_CAST 1
+
+in order to tell OpenMesh to use static casting. 
 
 I've done some testing, but please use at your own risk. Also I haven't tested under Windows.
 
