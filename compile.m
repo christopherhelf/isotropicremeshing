@@ -1,1 +1,1 @@
-mex -I./ -I/usr/local/include -L/usr/local/lib/OpenMesh -lOpenMeshTools -lOpenMeshCore remeshing.c ./src/BSP.cpp ./src/BSPTraits.cpp ./src/IsotropicRemesher.cpp
+mex -I./ -I/usr/local/include -L/usr/local/lib -lOpenMeshTools -lOpenMeshCore LDFLAGS='\$LDFLAGS -Wl,-rpath,/usr/local/lib' remeshing.c ./src/BSP.cpp ./src/BSPTraits.cpp ./src/IsotropicRemesher.cpp

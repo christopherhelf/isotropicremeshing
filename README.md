@@ -21,9 +21,9 @@ I've done some testing, but please use at your own risk. Also I haven't tested u
 
 With the project folder as Matlab source, you can compile the file directly in Matlab via
 
-    $ mex -I./ -I/usr/local/include -L/usr/local/lib/OpenMesh -lOpenMeshTools -lOpenMeshCore remeshing.c ./src/BSP.cpp ./src/BSPTraits.cpp ./src/IsotropicRemesher.cpp
+    $ mex -I./ -I/usr/local/include -L/usr/local/lib -lOpenMeshTools -lOpenMeshCore LDFLAGS='\$LDFLAGS -Wl,-rpath,/usr/local/lib' remeshing.c ./src/BSP.cpp ./src/BSPTraits.cpp ./src/IsotropicRemesher.cpp
 
-Make sure to point to the correct location of OpenMesh headers and libraries. On MacOSX, you can install OpenMesh via
+Make sure to point to the correct location of OpenMesh headers and libraries. The above command also sets the runtime path so libraries can be found once the mex function is loaded. On MacOSX, you can install OpenMesh via
 
     $ brew install open-mesh --HEAD
 
