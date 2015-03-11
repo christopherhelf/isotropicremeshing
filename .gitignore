@@ -1,4 +1,4 @@
 .DS_Store
-./data
-./remeshing.mexmaci64
-./test
+data/
+remeshing.mexmaci64
+test/
