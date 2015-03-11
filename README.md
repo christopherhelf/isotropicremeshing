@@ -4,6 +4,8 @@ This is an Isoptropic Remesher based on OpenMesh (http://www.openmesh.org/) and 
 
 Make sure to compile OpenMesh with the CMAKE Flag -DCMAKE_BUILD_TYPE=Release, otherwise dynamic casting is used which is not well supported by Matlab and hence can lead to segmentation faults. 
 
+I've done some testing, but please use at your own risk. Also I haven't tested under Windows.
+
 ## Features
 
 - Standalone except OpenMesh library
@@ -48,3 +50,5 @@ points is a nx3 matrix of type double, with x,y and z values in each column.
 features is a nx1 matrix with the IDs of points considered as features vertices. 
 
 targetedgelength is your desired target edge length and should be a double value, while iterations specifies the number of iterations and should be of type int32. 
+
+In return, you'll receive similar structures as the input, with facetsOut being a nx3 matrix with the triangles specified by points IDs, and pointsOut a nx3 double matrix with the x,y and z values of the new points. 
